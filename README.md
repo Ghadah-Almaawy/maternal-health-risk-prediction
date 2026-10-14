@@ -2,8 +2,6 @@
 
 A machine learning project that predicts a pregnant woman's health risk level (**low / mid / high**) from six routine vital signs, with a focus on measuring performance **honestly** on patients the model has never seen.
 
-> I first explored this dataset in a group course project, then rebuilt it independently from scratch with a different methodology.
-
 ## Key Finding: Duplicate Records Inflate Scores
 
 More than half of the records in this dataset (**55%**) are exact duplicates. With an ordinary random split, copies of the same record end up in both the training and test sets, so the model is partly graded on answers it has already memorized.
