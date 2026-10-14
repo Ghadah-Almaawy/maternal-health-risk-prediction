@@ -8,7 +8,7 @@ A machine learning project that predicts a pregnant woman's health risk level (*
 
 More than half of the records in this dataset (**55%**) are exact duplicates. With an ordinary random split, copies of the same record end up in both the training and test sets, so the model is partly graded on answers it has already memorized.
 
-![Effect of duplicate records](images/leakage.png)
+![Effect of duplicate records](leakage.png)
 
 The same Random Forest scores a macro F1 of **0.84** with a random split, but only **0.63** when identical readings are kept on one side of the split. Every result in this project uses the grouped split, so it reflects performance on genuinely new patients.
 
@@ -76,14 +76,14 @@ No approach meaningfully improved on the final model: the small gain from tuned 
 | High risk precision | 1.000 |
 | ROC AUC (one vs rest, macro) | 0.812 |
 
-![Confusion matrix](images/confusion_matrix.png)
+![Confusion matrix](confusion_matrix.png)
 
 - **High risk is handled well:** every patient flagged as high risk truly was, and about three quarters of high risk patients were caught.
 - **Mid risk is the weak spot:** most mid risk patients were predicted as low risk. A single reading with completely normal vital signs, repeated 34 times in the test set and labeled mid risk 27 times, accounts for many of these errors. On unique test readings, the score matches the cross validation estimate.
 
 **What drives the predictions:**
 
-![Feature importance](images/feature_importance.png)
+![Feature importance](feature_importance.png)
 
 Systolic blood pressure and blood glucose dominate, which matches clinical knowledge. Body temperature contributes almost nothing, and the high risk patients the model predicted as low risk all had a fever with otherwise normal readings, so fever is a clear area for improvement.
 
@@ -116,7 +116,8 @@ jupyter notebook maternal_health_risk_classification.ipynb
 
 ```
 ├── maternal_health_risk_classification.ipynb   # full analysis
-├── images/                                     # charts used in this README
+├── leakage.png, confusion_matrix.png,          # charts used in this README
+│   feature_importance.png
 └── requirements.txt
 ```
 
