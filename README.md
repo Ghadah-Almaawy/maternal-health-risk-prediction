@@ -121,4 +121,6 @@ jupyter notebook maternal_health_risk_classification.ipynb
 
 ## License
 
-This project is shared for educational and portfolio purposes.
+© 2026 Ghadah Almaawy. All rights reserved.
+
+This repository is shared publicly for viewing as part of my portfolio. Copying, redistributing, or submitting this code or analysis, in whole or in part, as your own work is not permitted without written permission.
